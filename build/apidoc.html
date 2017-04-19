@@ -1,0 +1,4589 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://lokijs.org"
+
+    >lokijs (v1.4.3)</a>
+</h1>
+<h4>Fast document oriented javascript in-memory database</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs">module lokijs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.lokijs">
+            function <span class="apidocSignatureSpan"></span>lokijs
+            <span class="apidocSignatureSpan">(filename, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection">
+            function <span class="apidocSignatureSpan">lokijs.</span>Collection
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore">
+            function <span class="apidocSignatureSpan">lokijs.</span>KeyValueStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiFsAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiFsAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiLocalStorageAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiLocalStorageAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiMemoryAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiMemoryAdapter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiPartitioningAdapter
+            <span class="apidocSignatureSpan">(adapter, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>Collection.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>Collection.prototype.console</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>KeyValueStore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>LokiFsAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>LokiLocalStorageAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>LokiMemoryAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>LokiOps</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>LokiPartitioningAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.</span>persistenceAdapters</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.Collection">module lokijs.Collection</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.Collection">
+            function <span class="apidocSignatureSpan">lokijs.</span>Collection
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.Collection.prototype">module lokijs.Collection.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexInsert">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexInsert
+            <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexRemove">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexRemove
+            <span class="apidocSignatureSpan">(dataPosition, binaryIndexName, removedFromIndexOnly)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexUpdate">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexUpdate
+            <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.add">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>add
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.addAutoUpdateObserver">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addAutoUpdateObserver
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.addDynamicView">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addDynamicView
+            <span class="apidocSignatureSpan">(name, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.addTransform">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addTransform
+            <span class="apidocSignatureSpan">(name, transform)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.async">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>async
+            <span class="apidocSignatureSpan">(fun, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.avg">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>avg
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.by">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>by
+            <span class="apidocSignatureSpan">(field, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.byExample">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>byExample
+            <span class="apidocSignatureSpan">(template)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.calculateRange">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRange
+            <span class="apidocSignatureSpan">(op, prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.calculateRangeEnd">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRangeEnd
+            <span class="apidocSignatureSpan">(prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.calculateRangeStart">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRangeStart
+            <span class="apidocSignatureSpan">(prop, val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.chain">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>chain
+            <span class="apidocSignatureSpan">(transform, parameters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.clear">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>clear
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.commit">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>commit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.commitStage">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>commitStage
+            <span class="apidocSignatureSpan">(stageName, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.configureOptions">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>configureOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.count">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>count
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ensureAllIndexes">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureAllIndexes
+            <span class="apidocSignatureSpan">(force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ensureId">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureId
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ensureIdAsync">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureIdAsync
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ensureIndex">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureIndex
+            <span class="apidocSignatureSpan">(property, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ensureUniqueIndex">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureUniqueIndex
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.eqJoin">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>eqJoin
+            <span class="apidocSignatureSpan">(joinData, leftJoinProp, rightJoinProp, mapFun)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.extract">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>extract
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.extractNumerical">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>extractNumerical
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.find">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>find
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findAndRemove">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findAndRemove
+            <span class="apidocSignatureSpan">(filterObject)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findAndUpdate">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findAndUpdate
+            <span class="apidocSignatureSpan">(filterObject, updateFunction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findObject">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findObject
+            <span class="apidocSignatureSpan">(template)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findObjects">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findObjects
+            <span class="apidocSignatureSpan">(template)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findOne">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findOne
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.findOneUnindexed">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findOneUnindexed
+            <span class="apidocSignatureSpan">(prop, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.flagBinaryIndexDirty">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>flagBinaryIndexDirty
+            <span class="apidocSignatureSpan">(index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.flagBinaryIndexesDirty">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>flagBinaryIndexesDirty
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.get">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>get
+            <span class="apidocSignatureSpan">(id, returnPosition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.getBinaryIndexPosition">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getBinaryIndexPosition
+            <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.getDynamicView">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getDynamicView
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.getSequencedIndexValues">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getSequencedIndexValues
+            <span class="apidocSignatureSpan">(property)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.getStage">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getStage
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.insert">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>insert
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.insertOne">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>insertOne
+            <span class="apidocSignatureSpan">(doc, bulkInsert)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.mapReduce">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>mapReduce
+            <span class="apidocSignatureSpan">(mapFunction, reduceFunction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.max">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>max
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.maxRecord">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>maxRecord
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.median">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>median
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.min">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>min
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.minRecord">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>minRecord
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.mode">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>mode
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.no_op">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>no_op
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.prepareFullDocIndex">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>prepareFullDocIndex
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.remove">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>remove
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.removeAutoUpdateObserver">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeAutoUpdateObserver
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.removeDataOnly">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeDataOnly
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.removeDynamicView">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeDynamicView
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.removeTransform">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeTransform
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.removeWhere">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeWhere
+            <span class="apidocSignatureSpan">(query)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.rollback">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>rollback
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.setTTL">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>setTTL
+            <span class="apidocSignatureSpan">(age, interval)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.setTransform">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>setTransform
+            <span class="apidocSignatureSpan">(name, transform)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.stage">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>stage
+            <span class="apidocSignatureSpan">(stageName, obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.startTransaction">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>startTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.stdDev">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>stdDev
+            <span class="apidocSignatureSpan">(field)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.ttlDaemonFuncGen">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ttlDaemonFuncGen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.update">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>update
+            <span class="apidocSignatureSpan">(doc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.updateWhere">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>updateWhere
+            <span class="apidocSignatureSpan">(filterFunction, updateFunction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.where">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>where
+            <span class="apidocSignatureSpan">(fun)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>commitLog</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>console</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>stages</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.Collection.prototype.console">module lokijs.Collection.prototype.console</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.console.error">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.console.log">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.Collection.prototype.console.warn">
+            function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.KeyValueStore">module lokijs.KeyValueStore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.KeyValueStore">
+            function <span class="apidocSignatureSpan">lokijs.</span>KeyValueStore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.KeyValueStore.prototype">module lokijs.KeyValueStore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.prototype.bs">
+            function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>bs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.prototype.get">
+            function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>get
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.prototype.set">
+            function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.prototype.setSort">
+            function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>setSort
+            <span class="apidocSignatureSpan">(fun)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.KeyValueStore.prototype.sort">
+            function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>sort
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>keys</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>values</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiFsAdapter">module lokijs.LokiFsAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiFsAdapter.LokiFsAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiFsAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiFsAdapter.prototype">module lokijs.LokiFsAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiFsAdapter.prototype.deleteDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>deleteDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiFsAdapter.prototype.loadDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>loadDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiFsAdapter.prototype.saveDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>saveDatabase
+            <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiLocalStorageAdapter">module lokijs.LokiLocalStorageAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiLocalStorageAdapter.LokiLocalStorageAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiLocalStorageAdapter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiLocalStorageAdapter.prototype">module lokijs.LokiLocalStorageAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.deleteDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>deleteDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.loadDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>loadDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.saveDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>saveDatabase
+            <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiMemoryAdapter">module lokijs.LokiMemoryAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiMemoryAdapter.LokiMemoryAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiMemoryAdapter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiMemoryAdapter.prototype">module lokijs.LokiMemoryAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.deleteDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>deleteDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.loadDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>loadDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.saveDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>saveDatabase
+            <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiOps">module lokijs.LokiOps</a><ol>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiPartitioningAdapter">module lokijs.LokiPartitioningAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.LokiPartitioningAdapter">
+            function <span class="apidocSignatureSpan">lokijs.</span>LokiPartitioningAdapter
+            <span class="apidocSignatureSpan">(adapter, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.LokiPartitioningAdapter.prototype">module lokijs.LokiPartitioningAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.exportDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>exportDatabase
+            <span class="apidocSignatureSpan">(dbname, dbref, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadDatabase">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadDatabase
+            <span class="apidocSignatureSpan">(dbname, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPage">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadNextPage
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPartition">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadNextPartition
+            <span class="apidocSignatureSpan">(partition, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPage">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>saveNextPage
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPartition">
+            function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>saveNextPartition
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.lokijs.persistenceAdapters">module lokijs.persistenceAdapters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.persistenceAdapters.fs">
+            function <span class="apidocSignatureSpan">lokijs.persistenceAdapters.</span>fs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.lokijs.persistenceAdapters.localStorage">
+            function <span class="apidocSignatureSpan">lokijs.persistenceAdapters.</span>localStorage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs" id="apidoc.module.lokijs">module lokijs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.lokijs" id="apidoc.element.lokijs.lokijs">
+        function <span class="apidocSignatureSpan"></span>lokijs
+        <span class="apidocSignatureSpan">(filename, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Loki(filename, options) {
+  this.filename = filename || &#x27;loki.db&#x27;;
+  this.collections = [];
+
+  // persist version of code which created the database to the database.
+  // could use for upgrade scenarios
+  this.databaseVersion = 1.1;
+  this.engineVersion = 1.1;
+
+  // autosave support (disabled by default)
+  // pass autosave: true, autosaveInterval: 6000 in options to set 6 second autosave
+  this.autosave = false;
+  this.autosaveInterval = 5000;
+  this.autosaveHandle = null;
+  this.throttledSaves = true;
+
+  this.options = {};
+
+  // currently keeping persistenceMethod and persistenceAdapter as loki level properties that
+  // will not or cannot be deserialized.  You are required to configure persistence every time
+  // you instantiate a loki object (or use default environment detection) in order to load the database anyways.
+
+  // persistenceMethod could be &#x27;fs&#x27;, &#x27;localStorage&#x27;, or &#x27;adapter&#x27;
+  // this is optional option param, otherwise environment detection will be used
+  // if user passes their own adapter we will force this method to &#x27;adapter&#x27; later, so no need to pass method option.
+  this.persistenceMethod = null;
+
+  // retain reference to optional (non-serializable) persistenceAdapter &#x27;instance&#x27;
+  this.persistenceAdapter = null;
+
+  // flags used to throttle saves
+  this.throttledSavePending = false;
+  this.throttledCallbacks = [];
+
+  // enable console output if verbose flag is set (disabled by default)
+  this.verbose = options &#x26;&#x26; options.hasOwnProperty(&#x27;verbose&#x27;) ? options.verbose : false;
+
+  this.events = {
+    &#x27;init&#x27;: [],
+    &#x27;loaded&#x27;: [],
+    &#x27;flushChanges&#x27;: [],
+    &#x27;close&#x27;: [],
+    &#x27;changes&#x27;: [],
+    &#x27;warning&#x27;: []
+  };
+
+  var getENV = function () {
+    // if (typeof global !== &#x27;undefined&#x27; &#x26;&#x26; (global.android || global.NSObject)) {
+    //   //If no adapter is set use the default nativescript adapter
+    //   if (!options.adapter) {
+    //     var LokiNativescriptAdapter = require(&#x27;./loki-nativescript-adapter&#x27;);
+    //     options.adapter=new LokiNativescriptAdapter();
+    //   }
+    //   return &#x27;NATIVESCRIPT&#x27;; //nativescript
+    // }
+
+    if (typeof window === &#x27;undefined&#x27;) {
+      return &#x27;NODEJS&#x27;;
+    }
+
+    if (typeof global !== &#x27;undefined&#x27; &#x26;&#x26; global.window) {
+      return &#x27;NODEJS&#x27;; //node-webkit
+    }
+
+    if (typeof document !== &#x27;undefined&#x27;) {
+      if (document.URL.indexOf(&#x27;http://&#x27;) === -1 &#x26;&#x26; document.URL.indexOf(&#x27;https://&#x27;) === -1) {
+        return &#x27;CORDOVA&#x27;;
+      }
+      return &#x27;BROWSER&#x27;;
+    }
+    return &#x27;CORDOVA&#x27;;
+  };
+
+  // refactored environment detection due to invalid detection for browser environments.
+  // if they do not specify an options.env we want to detect env rather than default to nodejs.
+  // currently keeping two properties for similar thing (options.env and options.persistenceMethod)
+  //   might want to review whether we can consolidate.
+  if (options &#x26;&#x26; options.hasOwnProperty(&#x27;env&#x27;)) {
+    this.ENV = options.env;
+  } else {
+    this.ENV = getENV();
+  }
+
+  // not sure if this is necessary now that i have refactored the line above
+  if (this.ENV === &#x27;undefined&#x27;) {
+    this.ENV = &#x27;NODEJS&#x27;;
+  }
+
+  //if (typeof (options) !== &#x27;undefined&#x27;) {
+  this.configureOptions(options, true);
+  //}
+
+  this.on(&#x27;init&#x27;, this.clearChanges);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection" id="apidoc.element.lokijs.Collection">
+        function <span class="apidocSignatureSpan">lokijs.</span>Collection
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(name, options) {
+  // the name of the collection
+
+  this.name = name;
+  // the data held by the collection
+  this.data = [];
+  this.idIndex = []; // index of id
+  this.binaryIndices = {}; // user defined indexes
+  this.constraints = {
+    unique: {},
+    exact: {}
+  };
+
+  // unique contraints contain duplicate object references, so they are not persisted.
+  // we will keep track of properties which have unique contraint applied here, and regenerate on load
+  this.uniqueNames = [];
+
+  // transforms will be used to store frequently used query chains as a series of steps
+  // which itself can be stored along with the database.
+  this.transforms = {};
+
+  // the object type of the collection
+  this.objType = name;
+
+  // in autosave scenarios we will use collection level dirty flags to determine whether save is needed.
+  // currently, if any collection is dirty we will autosave the whole database if autosave is configured.
+  // defaulting to true since this is called from addCollection and adding a collection should trigger save
+  this.dirty = true;
+
+  // private holders for cached data
+  this.cachedIndex = null;
+  this.cachedBinaryIndex = null;
+  this.cachedData = null;
+  var self = this;
+
+<span class="apidocCodeCommentSpan">  /* OPTIONS */
+</span>  options = options || {};
+
+  // exact match and unique constraints
+  if (options.hasOwnProperty(&#x27;unique&#x27;)) {
+    if (!Array.isArray(options.unique)) {
+      options.unique = [options.unique];
+    }
+    options.unique.forEach(function (prop) {
+      self.uniqueNames.push(prop); // used to regenerate on subsequent database loads
+      self.constraints.unique[prop] = new UniqueIndex(prop);
+    });
+  }
+
+  if (options.hasOwnProperty(&#x27;exact&#x27;)) {
+    options.exact.forEach(function (prop) {
+      self.constraints.exact[prop] = new ExactIndex(prop);
+    });
+  }
+
+  // if set to true we will optimally keep indices &#x27;fresh&#x27; during insert/update/remove ops (never dirty/never needs rebuild)
+  // if you frequently intersperse insert/update/remove ops between find ops this will likely be significantly faster option.
+  this.adaptiveBinaryIndices = options.hasOwnProperty(&#x27;adaptiveBinaryIndices&#x27;) ? options.adaptiveBinaryIndices : true;
+
+  // is collection transactional
+  this.transactional = options.hasOwnProperty(&#x27;transactional&#x27;) ? options.transactional : false;
+
+  // options to clone objects when inserting them
+  this.cloneObjects = options.hasOwnProperty(&#x27;clone&#x27;) ? options.clone : false;
+
+  // default clone method (if enabled) is parse-stringify
+  this.cloneMethod = options.hasOwnProperty(&#x27;cloneMethod&#x27;) ? options.cloneMethod : &#x22;parse-stringify&#x22;;
+
+  // option to make event listeners async, default is sync
+  this.asyncListeners = options.hasOwnProperty(&#x27;asyncListeners&#x27;) ? options.asyncListeners : false;
+
+  // disable track changes
+  this.disableChangesApi = options.hasOwnProperty(&#x27;disableChangesApi&#x27;) ? options.disableChangesApi : true;
+
+  // option to observe objects and update them automatically, ignored if Object.observe is not supported
+  this.autoupdate = options.hasOwnProperty(&#x27;autoupdate&#x27;) ? options.autoupdate : false;
+
+  //option to activate a cleaner daemon - clears &#x22;aged&#x22; documents at set intervals.
+  this.ttl = {
+    age: null,
+    ttlInterval: null,
+    daemon: null
+  };
+  this.setTTL(options.ttl || -1, options.ttlInterval);
+
+  // currentMaxId - change manually at your own peril!
+  this.maxId = 0;
+
+  this.DynamicViews = [];
+
+  // events
+  this.events = {
+    &#x27;insert&#x27;: [],
+    &#x27;update&#x27;: [],
+    &#x27;pre-insert&#x27;: [],
+    &#x27;pre-update&#x27;: [],
+    &#x27;close&#x27;: [],
+    &#x27;flushbuffer&#x27;: [],
+    &#x27;error&#x27;: [],
+    &#x27;delete&#x27;: [],
+    &#x27;warning&#x27;: []
+  };
+
+  // changes are tracked by collection and aggregated by the db
+  this.changes = [];
+
+  // initialize the id index
+  this.ensureId();
+  var indices = [];
+  // initialize optional user-supplied indices array [&#x27;age&#x27;, &#x27;lname&#x27;, &#x27;zip&#x27;]
+  if (options &#x26;&#x26; options.indices) {
+    if (Object.prototype.toString.call(options.indices) === &#x27;[object Array]&#x27;) {
+      indices = options.indices;
+    } else if (typeof options.indices === &#x27;string&#x27;) {
+      indices = [options.indices];
+    } else {
+      thr ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore" id="apidoc.element.lokijs.KeyValueStore">
+        function <span class="apidocSignatureSpan">lokijs.</span>KeyValueStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function KeyValueStore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiFsAdapter" id="apidoc.element.lokijs.LokiFsAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiFsAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiFsAdapter() {
+  this.fs = require(&#x27;fs&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiLocalStorageAdapter" id="apidoc.element.lokijs.LokiLocalStorageAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiLocalStorageAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiLocalStorageAdapter() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiMemoryAdapter" id="apidoc.element.lokijs.LokiMemoryAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiMemoryAdapter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiMemoryAdapter(options) {
+  this.hashStore = {};
+  this.options = options || {};
+
+  if (!this.options.hasOwnProperty(&#x27;asyncResponses&#x27;)) {
+    this.options.asyncResponses = false;
+  }
+
+  if (!this.options.hasOwnProperty(&#x27;asyncTimeout&#x27;)) {
+    this.options.asyncTimeout = 50; // 50 ms default
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter" id="apidoc.element.lokijs.LokiPartitioningAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiPartitioningAdapter
+        <span class="apidocSignatureSpan">(adapter, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiPartitioningAdapter(adapter, options) {
+  this.mode = &#x22;reference&#x22;;
+  this.adapter = null;
+  this.options = options || {};
+  this.dbref = null;
+  this.dbname = &#x22;&#x22;;
+  this.pageIterator = {};
+
+  // verify user passed an appropriate adapter
+  if (adapter) {
+    if (adapter.mode === &#x22;reference&#x22;) {
+      throw new Error(&#x22;LokiPartitioningAdapter cannot be instantiated with a reference mode adapter&#x22;);
+    }
+    else {
+      this.adapter = adapter;
+    }
+  }
+  else {
+    throw new Error(&#x22;LokiPartitioningAdapter requires a (non-reference mode) adapter on construction&#x22;);
+  }
+
+  // set collection paging defaults
+  if (!this.options.hasOwnProperty(&#x22;paging&#x22;)) {
+    this.options.paging = false;
+  }
+
+  // default to page size of 25 megs (can be up to your largest serialized object size larger than this)
+  if (!this.options.hasOwnProperty(&#x22;pageSize&#x22;)) {
+    this.options.pageSize = 25*1024*1024;
+  }
+
+  if (!this.options.hasOwnProperty(&#x22;delimiter&#x22;)) {
+    this.options.delimiter = &#x27;$&#x3c;\n&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.Collection" id="apidoc.module.lokijs.Collection">module lokijs.Collection</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.Collection" id="apidoc.element.lokijs.Collection.Collection">
+        function <span class="apidocSignatureSpan">lokijs.</span>Collection
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Collection(name, options) {
+  // the name of the collection
+
+  this.name = name;
+  // the data held by the collection
+  this.data = [];
+  this.idIndex = []; // index of id
+  this.binaryIndices = {}; // user defined indexes
+  this.constraints = {
+    unique: {},
+    exact: {}
+  };
+
+  // unique contraints contain duplicate object references, so they are not persisted.
+  // we will keep track of properties which have unique contraint applied here, and regenerate on load
+  this.uniqueNames = [];
+
+  // transforms will be used to store frequently used query chains as a series of steps
+  // which itself can be stored along with the database.
+  this.transforms = {};
+
+  // the object type of the collection
+  this.objType = name;
+
+  // in autosave scenarios we will use collection level dirty flags to determine whether save is needed.
+  // currently, if any collection is dirty we will autosave the whole database if autosave is configured.
+  // defaulting to true since this is called from addCollection and adding a collection should trigger save
+  this.dirty = true;
+
+  // private holders for cached data
+  this.cachedIndex = null;
+  this.cachedBinaryIndex = null;
+  this.cachedData = null;
+  var self = this;
+
+<span class="apidocCodeCommentSpan">  /* OPTIONS */
+</span>  options = options || {};
+
+  // exact match and unique constraints
+  if (options.hasOwnProperty(&#x27;unique&#x27;)) {
+    if (!Array.isArray(options.unique)) {
+      options.unique = [options.unique];
+    }
+    options.unique.forEach(function (prop) {
+      self.uniqueNames.push(prop); // used to regenerate on subsequent database loads
+      self.constraints.unique[prop] = new UniqueIndex(prop);
+    });
+  }
+
+  if (options.hasOwnProperty(&#x27;exact&#x27;)) {
+    options.exact.forEach(function (prop) {
+      self.constraints.exact[prop] = new ExactIndex(prop);
+    });
+  }
+
+  // if set to true we will optimally keep indices &#x27;fresh&#x27; during insert/update/remove ops (never dirty/never needs rebuild)
+  // if you frequently intersperse insert/update/remove ops between find ops this will likely be significantly faster option.
+  this.adaptiveBinaryIndices = options.hasOwnProperty(&#x27;adaptiveBinaryIndices&#x27;) ? options.adaptiveBinaryIndices : true;
+
+  // is collection transactional
+  this.transactional = options.hasOwnProperty(&#x27;transactional&#x27;) ? options.transactional : false;
+
+  // options to clone objects when inserting them
+  this.cloneObjects = options.hasOwnProperty(&#x27;clone&#x27;) ? options.clone : false;
+
+  // default clone method (if enabled) is parse-stringify
+  this.cloneMethod = options.hasOwnProperty(&#x27;cloneMethod&#x27;) ? options.cloneMethod : &#x22;parse-stringify&#x22;;
+
+  // option to make event listeners async, default is sync
+  this.asyncListeners = options.hasOwnProperty(&#x27;asyncListeners&#x27;) ? options.asyncListeners : false;
+
+  // disable track changes
+  this.disableChangesApi = options.hasOwnProperty(&#x27;disableChangesApi&#x27;) ? options.disableChangesApi : true;
+
+  // option to observe objects and update them automatically, ignored if Object.observe is not supported
+  this.autoupdate = options.hasOwnProperty(&#x27;autoupdate&#x27;) ? options.autoupdate : false;
+
+  //option to activate a cleaner daemon - clears &#x22;aged&#x22; documents at set intervals.
+  this.ttl = {
+    age: null,
+    ttlInterval: null,
+    daemon: null
+  };
+  this.setTTL(options.ttl || -1, options.ttlInterval);
+
+  // currentMaxId - change manually at your own peril!
+  this.maxId = 0;
+
+  this.DynamicViews = [];
+
+  // events
+  this.events = {
+    &#x27;insert&#x27;: [],
+    &#x27;update&#x27;: [],
+    &#x27;pre-insert&#x27;: [],
+    &#x27;pre-update&#x27;: [],
+    &#x27;close&#x27;: [],
+    &#x27;flushbuffer&#x27;: [],
+    &#x27;error&#x27;: [],
+    &#x27;delete&#x27;: [],
+    &#x27;warning&#x27;: []
+  };
+
+  // changes are tracked by collection and aggregated by the db
+  this.changes = [];
+
+  // initialize the id index
+  this.ensureId();
+  var indices = [];
+  // initialize optional user-supplied indices array [&#x27;age&#x27;, &#x27;lname&#x27;, &#x27;zip&#x27;]
+  if (options &#x26;&#x26; options.indices) {
+    if (Object.prototype.toString.call(options.indices) === &#x27;[object Array]&#x27;) {
+      indices = options.indices;
+    } else if (typeof options.indices === &#x27;string&#x27;) {
+      indices = [options.indices];
+    } else {
+      thr ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.Collection.prototype" id="apidoc.module.lokijs.Collection.prototype">module lokijs.Collection.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexInsert" id="apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexInsert">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexInsert
+        <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adaptiveBinaryIndexInsert = function (dataPosition, binaryIndexName) {
+  var index = this.binaryIndices[binaryIndexName].values;
+  var val = this.data[dataPosition][binaryIndexName];
+  //var rs = new Resultset(this, null, null);
+  var idxPos = this.calculateRangeStart(binaryIndexName, val);
+
+  // insert new data index into our binary index at the proper sorted location for relevant property calculated by idxPos.
+  // doing this after adjusting dataPositions so no clash with previous item at that position.
+  this.binaryIndices[binaryIndexName].values.splice(idxPos, 0, dataPosition);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexRemove" id="apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexRemove">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexRemove
+        <span class="apidocSignatureSpan">(dataPosition, binaryIndexName, removedFromIndexOnly)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adaptiveBinaryIndexRemove = function (dataPosition, binaryIndexName, removedFromIndexOnly) {
+  var idxPos = this.getBinaryIndexPosition(dataPosition, binaryIndexName);
+  var index = this.binaryIndices[binaryIndexName].values;
+  var len,
+    idx;
+
+  if (idxPos === null) {
+    // throw new Error(&#x27;unable to determine binary index position&#x27;);
+    return null;
+  }
+
+  // remove document from index
+  this.binaryIndices[binaryIndexName].values.splice(idxPos, 1);
+
+  // if we passed this optional flag parameter, we are calling from adaptiveBinaryIndexUpdate,
+  // in which case data positions stay the same.
+  if (removedFromIndexOnly === true) {
+    return;
+  }
+
+  // since index stores data array positions, if we remove a document
+  // we need to adjust array positions -1 for all document positions greater than removed position
+  len = index.length;
+  for (idx = 0; idx &#x3c; len; idx++) {
+    if (index[idx] &#x3e; dataPosition) {
+      index[idx]--;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexUpdate" id="apidoc.element.lokijs.Collection.prototype.adaptiveBinaryIndexUpdate">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>adaptiveBinaryIndexUpdate
+        <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adaptiveBinaryIndexUpdate = function (dataPosition, binaryIndexName) {
+  // linear scan needed to find old position within index unless we optimize for clone scenarios later
+  // within (my) node 5.6.0, the following for() loop with strict compare is -much- faster than indexOf()
+  var idxPos,
+    index = this.binaryIndices[binaryIndexName].values,
+    len=index.length;
+
+  for(idxPos=0; idxPos &#x3c; len; idxPos++) {
+    if (index[idxPos] === dataPosition) break;
+  }
+
+  //var idxPos = this.binaryIndices[binaryIndexName].values.indexOf(dataPosition);
+  this.binaryIndices[binaryIndexName].values.splice(idxPos, 1);
+
+  //this.adaptiveBinaryIndexRemove(dataPosition, binaryIndexName, true);
+  this.adaptiveBinaryIndexInsert(dataPosition, binaryIndexName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.add" id="apidoc.element.lokijs.Collection.prototype.add">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>add
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (obj) {
+  // if parameter isn&#x27;t object exit with throw
+  if (&#x27;object&#x27; !== typeof obj) {
+    throw new TypeError(&#x27;Object being added needs to be an object&#x27;);
+  }
+  // if object you are adding already has id column it is either already in the collection
+  // or the object is carrying its own &#x27;id&#x27; property.  If it also has a meta property,
+  // then this is already in collection so throw error, otherwise rename to originalId and continue adding.
+  if (typeof (obj.$loki) !== &#x27;undefined&#x27;) {
+    throw new Error(&#x27;Document is already in collection, please use update()&#x27;);
+  }
+
+<span class="apidocCodeCommentSpan">  /*
+   * try adding object to collection
+   */
+</span>  try {
+    this.startTransaction();
+    this.maxId++;
+
+    if (isNaN(this.maxId)) {
+      this.maxId = (this.data[this.data.length - 1].$loki + 1);
+    }
+
+    obj.$loki = this.maxId;
+    obj.meta.version = 0;
+
+    var key, constrUnique = this.constraints.unique;
+    for (key in constrUnique) {
+      if (hasOwnProperty.call(constrUnique, key)) {
+        constrUnique[key].set(obj);
+      }
+    }
+
+    // add new obj id to idIndex
+    this.idIndex.push(obj.$loki);
+
+    // add the object
+    this.data.push(obj);
+
+    var addedPos = this.data.length - 1;
+
+    // now that we can efficiently determine the data[] position of newly added document,
+    // submit it for all registered DynamicViews to evaluate for inclusion/exclusion
+    var dvlen = this.DynamicViews.length;
+    for (var i = 0; i &#x3c; dvlen; i++) {
+      this.DynamicViews[i].evaluateDocument(addedPos, true);
+    }
+
+    if (this.adaptiveBinaryIndices) {
+      // for each binary index defined in collection, immediately update rather than flag for lazy rebuild
+      var bIndices = this.binaryIndices;
+      for (key in bIndices) {
+        this.adaptiveBinaryIndexInsert(addedPos, key);
+      }
+    }
+    else {
+      this.flagBinaryIndexesDirty();
+    }
+
+    this.commit();
+    this.dirty = true; // for autosave scenarios
+
+    return (this.cloneObjects) ? (clone(obj, this.cloneMethod)) : (obj);
+  } catch (err) {
+    this.rollback();
+    this.console.error(err.message);
+    this.emit(&#x27;error&#x27;, err);
+    throw (err); // re-throw error so user does not think it succeeded
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.addAutoUpdateObserver" id="apidoc.element.lokijs.Collection.prototype.addAutoUpdateObserver">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addAutoUpdateObserver
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addAutoUpdateObserver = function (object) {
+  if (!this.autoupdate || typeof Object.observe !== &#x27;function&#x27;)
+    return;
+
+  Object.observe(object, this.observerCallback, [&#x27;add&#x27;, &#x27;update&#x27;, &#x27;delete&#x27;, &#x27;reconfigure&#x27;, &#x27;setPrototype&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.addDynamicView" id="apidoc.element.lokijs.Collection.prototype.addDynamicView">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addDynamicView
+        <span class="apidocSignatureSpan">(name, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDynamicView = function (name, options) {
+  var dv = new DynamicView(this, name, options);
+  this.DynamicViews.push(dv);
+
+  return dv;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.addTransform" id="apidoc.element.lokijs.Collection.prototype.addTransform">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>addTransform
+        <span class="apidocSignatureSpan">(name, transform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addTransform = function (name, transform) {
+  if (this.transforms.hasOwnProperty(name)) {
+    throw new Error(&#x22;a transform by that name already exists&#x22;);
+  }
+
+  this.transforms[name] = transform;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.async" id="apidoc.element.lokijs.Collection.prototype.async">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>async
+        <span class="apidocSignatureSpan">(fun, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (fun, callback) {
+  setTimeout(function () {
+    if (typeof fun === &#x27;function&#x27;) {
+      fun();
+      callback();
+    } else {
+      throw new TypeError(&#x27;Argument passed for async execution is not a function&#x27;);
+    }
+  }, 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.avg" id="apidoc.element.lokijs.Collection.prototype.avg">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>avg
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">avg = function (field) {
+  return average(this.extractNumerical(field));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.by" id="apidoc.element.lokijs.Collection.prototype.by">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>by
+        <span class="apidocSignatureSpan">(field, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">by = function (field, value) {
+  var self;
+  if (value === undefined) {
+    self = this;
+    return function (value) {
+      return self.by(field, value);
+    };
+  }
+
+  var result = this.constraints.unique[field].get(value);
+  if (!this.cloneObjects) {
+    return result;
+  } else {
+    return clone(result, this.cloneMethod);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.byExample" id="apidoc.element.lokijs.Collection.prototype.byExample">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>byExample
+        <span class="apidocSignatureSpan">(template)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">byExample = function (template) {
+  var k, obj, query;
+  query = [];
+  for (k in template) {
+    if (!template.hasOwnProperty(k)) continue;
+    query.push((
+      obj = {},
+      obj[k] = template[k],
+      obj
+    ));
+  }
+  return {
+    &#x27;$and&#x27;: query
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.calculateRange" id="apidoc.element.lokijs.Collection.prototype.calculateRange">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRange
+        <span class="apidocSignatureSpan">(op, prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateRange = function (op, prop, val) {
+  var rcd = this.data;
+  var index = this.binaryIndices[prop].values;
+  var min = 0;
+  var max = index.length - 1;
+  var mid = 0;
+
+  // when no documents are in collection, return empty range condition
+  if (rcd.length === 0) {
+    return [0, -1];
+  }
+
+  var minVal = rcd[index[min]][prop];
+  var maxVal = rcd[index[max]][prop];
+
+  // if value falls outside of our range return [0, -1] to designate no results
+  switch (op) {
+  case &#x27;$eq&#x27;:
+  case &#x27;$aeq&#x27;:
+    if (ltHelper(val, minVal, false) || gtHelper(val, maxVal, false)) {
+      return [0, -1];
+    }
+    break;
+  case &#x27;$dteq&#x27;:
+    if (ltHelper(val, minVal, false) || gtHelper(val, maxVal, false)) {
+      return [0, -1];
+    }
+    break;
+  case &#x27;$gt&#x27;:
+    if (gtHelper(val, maxVal, true)) {
+      return [0, -1];
+    }
+    break;
+  case &#x27;$gte&#x27;:
+    if (gtHelper(val, maxVal, false)) {
+      return [0, -1];
+    }
+    break;
+  case &#x27;$lt&#x27;:
+    if (ltHelper(val, minVal, true)) {
+      return [0, -1];
+    }
+    if (ltHelper(maxVal, val, false)) {
+      return [0, rcd.length - 1];
+    }
+    break;
+  case &#x27;$lte&#x27;:
+    if (ltHelper(val, minVal, false)) {
+      return [0, -1];
+    }
+    if (ltHelper(maxVal, val, true)) {
+      return [0, rcd.length - 1];
+    }
+    break;
+  case &#x27;$between&#x27;:
+    return ([this.calculateRangeStart(prop, val[0]), this.calculateRangeEnd(prop, val[1])]);
+  case &#x27;$in&#x27;:
+    var idxset = [],
+      segResult = [];
+    // query each value &#x27;$eq&#x27; operator and merge the seqment results.
+    for (var j = 0, len = val.length; j &#x3c; len; j++) {
+        var seg = this.calculateRange(&#x27;$eq&#x27;, prop, val[j]);
+
+        for (var i = seg[0]; i &#x3c;= seg[1]; i++) {
+            if (idxset[i] === undefined) {
+                idxset[i] = true;
+                segResult.push(i);
+            }
+        }
+    }
+    return segResult;
+  }
+
+  // hone in on start position of value
+  while (min &#x3c; max) {
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+    if (ltHelper(rcd[index[mid]][prop], val, false)) {
+      min = mid + 1;
+    } else {
+      max = mid;
+    }
+  }
+
+  var lbound = min;
+
+  // do not reset min, as the upper bound cannot be prior to the found low bound
+  max = index.length - 1;
+
+  // hone in on end position of value
+  while (min &#x3c; max) {
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+    if (ltHelper(val, rcd[index[mid]][prop], false)) {
+      max = mid;
+    } else {
+      min = mid + 1;
+    }
+  }
+
+  var ubound = max;
+
+  var lval = rcd[index[lbound]][prop];
+  var uval = rcd[index[ubound]][prop];
+
+  switch (op) {
+  case &#x27;$eq&#x27;:
+    if (lval !== val) {
+      return [0, -1];
+    }
+    if (uval !== val) {
+      ubound--;
+    }
+
+    return [lbound, ubound];
+  case &#x27;$dteq&#x27;:
+    if (lval &#x3e; val || lval &#x3c; val) {
+      return [0, -1];
+    }
+    if (uval &#x3e; val || uval &#x3c; val) {
+      ubound--;
+    }
+
+    return [lbound, ubound];
+
+
+  case &#x27;$gt&#x27;:
+    if (ltHelper(uval, val, true)) {
+      return [0, -1];
+    }
+
+    return [ubound, rcd.length - 1];
+
+  case &#x27;$gte&#x27;:
+    if (ltHelper(lval, val, false)) {
+      return [0, -1];
+    }
+
+    return [lbound, rcd.length - 1];
+
+  case &#x27;$lt&#x27;:
+    if (lbound === 0 &#x26;&#x26; ltHelper(lval, val, false)) {
+      return [0, 0];
+    }
+    return [0, lbound - 1];
+
+  case &#x27;$lte&#x27;:
+    if (uval !== val) {
+      ubound--;
+    }
+
+    if (ubound === 0 &#x26;&#x26; ltHelper(uval, val, false)) {
+      return [0, 0];
+    }
+    return [0, ubound];
+
+  default:
+    return [0, rcd.length - 1];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.calculateRangeEnd" id="apidoc.element.lokijs.Collection.prototype.calculateRangeEnd">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRangeEnd
+        <span class="apidocSignatureSpan">(prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateRangeEnd = function (prop, val) {
+  var rcd = this.data;
+  var index = this.binaryIndices[prop].values;
+  var min = 0;
+  var max = index.length - 1;
+  var mid = 0;
+
+  if (index.length === 0) {
+    return 0;
+  }
+
+  var minVal = rcd[index[min]][prop];
+  var maxVal = rcd[index[max]][prop];
+
+  // hone in on start position of value
+  while (min &#x3c; max) {
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+    if (ltHelper(val, rcd[index[mid]][prop], false)) {
+      max = mid;
+    } else {
+      min = mid + 1;
+    }
+  }
+
+  var ubound = max;
+
+  if (gtHelper(rcd[index[ubound]][prop], val, false)) {
+    return ubound-1;
+  }
+  else {
+    return ubound;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.calculateRangeStart" id="apidoc.element.lokijs.Collection.prototype.calculateRangeStart">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>calculateRangeStart
+        <span class="apidocSignatureSpan">(prop, val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateRangeStart = function (prop, val) {
+  var rcd = this.data;
+  var index = this.binaryIndices[prop].values;
+  var min = 0;
+  var max = index.length - 1;
+  var mid = 0;
+
+  if (index.length === 0) {
+    return 0;
+  }
+
+  var minVal = rcd[index[min]][prop];
+  var maxVal = rcd[index[max]][prop];
+
+  // hone in on start position of value
+  while (min &#x3c; max) {
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+    if (ltHelper(rcd[index[mid]][prop], val, false)) {
+      min = mid + 1;
+    } else {
+      max = mid;
+    }
+  }
+
+  var lbound = min;
+
+  if (ltHelper(rcd[index[lbound]][prop], val, false)) {
+    return lbound+1;
+  }
+  else {
+    return lbound;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.chain" id="apidoc.element.lokijs.Collection.prototype.chain">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>chain
+        <span class="apidocSignatureSpan">(transform, parameters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">chain = function (transform, parameters) {
+  var rs = new Resultset(this);
+
+  if (typeof transform === &#x27;undefined&#x27;) {
+    return rs;
+  }
+
+  return rs.transform(transform, parameters);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.clear" id="apidoc.element.lokijs.Collection.prototype.clear">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>clear
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (options) {
+  var self = this;
+
+  options = options || {};
+
+  this.data = [];
+  this.idIndex = [];
+  this.cachedIndex = null;
+  this.cachedBinaryIndex = null;
+  this.cachedData = null;
+  this.maxId = 0;
+  this.DynamicViews = [];
+  this.dirty = true;
+
+  // if removing indices entirely
+  if (options.removeIndices === true) {
+    this.binaryIndices = {};
+
+    this.constraints = {
+      unique: {},
+      exact: {}
+    };
+    this.uniqueNames = [];
+  }
+  // clear indices but leave definitions in place
+  else {
+    // clear binary indices
+    var keys = Object.keys(this.binaryIndices);
+    keys.forEach(function(biname) {
+      self.binaryIndices[biname].dirty = false;
+      self.binaryIndices[biname].values = [];
+    });
+
+    // clear entire unique indices definition
+    this.constraints = {
+      unique: {},
+      exact: {}
+    };
+
+    // add definitions back
+    this.uniqueNames.forEach(function(uiname) {
+      self.ensureUniqueIndex(uiname);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.commit" id="apidoc.element.lokijs.Collection.prototype.commit">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>commit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">commit = function () {
+  if (this.transactional) {
+    this.cachedData = null;
+    this.cachedIndex = null;
+    this.cachedBinaryIndex = null;
+
+    // propagate commit to dynamic views
+    for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+      this.DynamicViews[idx].commit();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.commitStage" id="apidoc.element.lokijs.Collection.prototype.commitStage">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>commitStage
+        <span class="apidocSignatureSpan">(stageName, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">commitStage = function (stageName, message) {
+  var stage = this.getStage(stageName),
+    prop,
+    timestamp = new Date().getTime();
+
+  for (prop in stage) {
+
+    this.update(stage[prop]);
+    this.commitLog.push({
+      timestamp: timestamp,
+      message: message,
+      data: JSON.parse(JSON.stringify(stage[prop]))
+    });
+  }
+  this.stages[stageName] = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.configureOptions" id="apidoc.element.lokijs.Collection.prototype.configureOptions">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>configureOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configureOptions = function (options) {
+  options = options || {};
+
+  if (options.hasOwnProperty(&#x27;adaptiveBinaryIndices&#x27;)) {
+    this.adaptiveBinaryIndices = options.adaptiveBinaryIndices;
+
+    // if switching to adaptive binary indices, make sure none are &#x27;dirty&#x27;
+    if (this.adaptiveBinaryIndices) {
+      this.ensureAllIndexes();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.count" id="apidoc.element.lokijs.Collection.prototype.count">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>count
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (query) {
+  if (!query) {
+    return this.data.length;
+  }
+
+  return this.chain().find(query).filteredrows.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ensureAllIndexes" id="apidoc.element.lokijs.Collection.prototype.ensureAllIndexes">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureAllIndexes
+        <span class="apidocSignatureSpan">(force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureAllIndexes = function (force) {
+  var key, bIndices = this.binaryIndices;
+  for (key in bIndices) {
+    if (hasOwnProperty.call(bIndices, key)) {
+      this.ensureIndex(key, force);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ensureId" id="apidoc.element.lokijs.Collection.prototype.ensureId">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureId
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureId = function () {
+  var len = this.data.length,
+    i = 0;
+
+  this.idIndex = [];
+  for (i; i &#x3c; len; i += 1) {
+    this.idIndex.push(this.data[i].$loki);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ensureIdAsync" id="apidoc.element.lokijs.Collection.prototype.ensureIdAsync">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureIdAsync
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureIdAsync = function (callback) {
+  this.async(function () {
+    this.ensureId();
+  }, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ensureIndex" id="apidoc.element.lokijs.Collection.prototype.ensureIndex">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureIndex
+        <span class="apidocSignatureSpan">(property, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureIndex = function (property, force) {
+  // optional parameter to force rebuild whether flagged as dirty or not
+  if (typeof (force) === &#x27;undefined&#x27;) {
+    force = false;
+  }
+
+  if (property === null || property === undefined) {
+    throw new Error(&#x27;Attempting to set index without an associated property&#x27;);
+  }
+
+  if (this.binaryIndices[property] &#x26;&#x26; !force) {
+    if (!this.binaryIndices[property].dirty) return;
+  }
+
+  // if the index is already defined and we are using adaptiveBinaryIndices and we are not forcing a rebuild, return.
+  if (this.adaptiveBinaryIndices === true &#x26;&#x26; this.binaryIndices.hasOwnProperty(property) &#x26;&#x26; !force) {
+    return;
+  }
+
+  var index = {
+    &#x27;name&#x27;: property,
+    &#x27;dirty&#x27;: true,
+    &#x27;values&#x27;: this.prepareFullDocIndex()
+  };
+  this.binaryIndices[property] = index;
+
+  var wrappedComparer =
+    (function (p, data) {
+      return function (a, b) {
+        var objAp = data[a][p],
+          objBp = data[b][p];
+        if (objAp !== objBp) {
+          if (ltHelper(objAp, objBp, false)) return -1;
+          if (gtHelper(objAp, objBp, false)) return 1;
+        }
+        return 0;
+      };
+    })(property, this.data);
+
+  index.values.sort(wrappedComparer);
+  index.dirty = false;
+
+  this.dirty = true; // for autosave scenarios
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ensureUniqueIndex" id="apidoc.element.lokijs.Collection.prototype.ensureUniqueIndex">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ensureUniqueIndex
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ensureUniqueIndex = function (field) {
+  var index = this.constraints.unique[field];
+  if (!index) {
+    // keep track of new unique index for regenerate after database (re)load.
+    if (this.uniqueNames.indexOf(field) == -1) {
+      this.uniqueNames.push(field);
+    }
+  }
+
+  // if index already existed, (re)loading it will likely cause collisions, rebuild always
+  this.constraints.unique[field] = index = new UniqueIndex(field);
+  this.data.forEach(function (obj) {
+    index.set(obj);
+  });
+  return index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.eqJoin" id="apidoc.element.lokijs.Collection.prototype.eqJoin">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>eqJoin
+        <span class="apidocSignatureSpan">(joinData, leftJoinProp, rightJoinProp, mapFun)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">eqJoin = function (joinData, leftJoinProp, rightJoinProp, mapFun) {
+  // logic in Resultset class
+  return new Resultset(this).eqJoin(joinData, leftJoinProp, rightJoinProp, mapFun);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.extract" id="apidoc.element.lokijs.Collection.prototype.extract">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>extract
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extract = function (field) {
+  var i = 0,
+    len = this.data.length,
+    isDotNotation = isDeepProperty(field),
+    result = [];
+  for (i; i &#x3c; len; i += 1) {
+    result.push(deepProperty(this.data[i], field, isDotNotation));
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.extractNumerical" id="apidoc.element.lokijs.Collection.prototype.extractNumerical">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>extractNumerical
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractNumerical = function (field) {
+  return this.extract(field).map(parseBase10).filter(Number).filter(function (n) {
+    return !(isNaN(n));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.find" id="apidoc.element.lokijs.Collection.prototype.find">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>find
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (query) {
+  if (typeof (query) === &#x27;undefined&#x27;) {
+    query = &#x27;getAll&#x27;;
+  }
+
+  var results = new Resultset(this, {
+    queryObj: query
+  });
+  if (!this.cloneObjects) {
+    return results;
+  } else {
+    return cloneObjectArray(results, this.cloneMethod);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findAndRemove" id="apidoc.element.lokijs.Collection.prototype.findAndRemove">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findAndRemove
+        <span class="apidocSignatureSpan">(filterObject)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAndRemove = function (filterObject) {
+  this.chain().find(filterObject).remove();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findAndUpdate" id="apidoc.element.lokijs.Collection.prototype.findAndUpdate">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findAndUpdate
+        <span class="apidocSignatureSpan">(filterObject, updateFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAndUpdate = function (filterObject, updateFunction) {
+  if (typeof (filterObject) === &#x22;function&#x22;) {
+    this.updateWhere(filterObject, updateFunction);
+  }
+  else {
+    this.chain().find(filterObject).update(updateFunction);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findObject" id="apidoc.element.lokijs.Collection.prototype.findObject">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findObject
+        <span class="apidocSignatureSpan">(template)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findObject = function (template) {
+  return this.findOne(this.byExample(template));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findObjects" id="apidoc.element.lokijs.Collection.prototype.findObjects">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findObjects
+        <span class="apidocSignatureSpan">(template)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findObjects = function (template) {
+  return this.find(this.byExample(template));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findOne" id="apidoc.element.lokijs.Collection.prototype.findOne">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findOne
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findOne = function (query) {
+  query = query || {};
+
+  // Instantiate Resultset and exec find op passing firstOnly = true param
+  var result = new Resultset(this, {
+    queryObj: query,
+    firstOnly: true
+  });
+
+  if (Array.isArray(result) &#x26;&#x26; result.length === 0) {
+    return null;
+  } else {
+    if (!this.cloneObjects) {
+      return result;
+    } else {
+      return clone(result, this.cloneMethod);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.findOneUnindexed" id="apidoc.element.lokijs.Collection.prototype.findOneUnindexed">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>findOneUnindexed
+        <span class="apidocSignatureSpan">(prop, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findOneUnindexed = function (prop, value) {
+  var i = this.data.length,
+    doc;
+  while (i--) {
+    if (this.data[i][prop] === value) {
+      doc = this.data[i];
+      return doc;
+    }
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.flagBinaryIndexDirty" id="apidoc.element.lokijs.Collection.prototype.flagBinaryIndexDirty">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>flagBinaryIndexDirty
+        <span class="apidocSignatureSpan">(index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flagBinaryIndexDirty = function (index) {
+  if (this.binaryIndices[index])
+    this.binaryIndices[index].dirty = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.flagBinaryIndexesDirty" id="apidoc.element.lokijs.Collection.prototype.flagBinaryIndexesDirty">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>flagBinaryIndexesDirty
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flagBinaryIndexesDirty = function () {
+  var key, bIndices = this.binaryIndices;
+  for (key in bIndices) {
+    if (hasOwnProperty.call(bIndices, key)) {
+      bIndices[key].dirty = true;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.get" id="apidoc.element.lokijs.Collection.prototype.get">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>get
+        <span class="apidocSignatureSpan">(id, returnPosition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (id, returnPosition) {
+  var retpos = returnPosition || false,
+    data = this.idIndex,
+    max = data.length - 1,
+    min = 0,
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+  id = typeof id === &#x27;number&#x27; ? id : parseInt(id, 10);
+
+  if (isNaN(id)) {
+    throw new TypeError(&#x27;Passed id is not an integer&#x27;);
+  }
+
+  while (data[min] &#x3c; data[max]) {
+    mid = (min + max) &#x3e;&#x3e; 1;
+
+    if (data[mid] &#x3c; id) {
+      min = mid + 1;
+    } else {
+      max = mid;
+    }
+  }
+
+  if (max === min &#x26;&#x26; data[min] === id) {
+    if (retpos) {
+      return [this.data[min], min];
+    }
+    return this.data[min];
+  }
+  return null;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.getBinaryIndexPosition" id="apidoc.element.lokijs.Collection.prototype.getBinaryIndexPosition">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getBinaryIndexPosition
+        <span class="apidocSignatureSpan">(dataPosition, binaryIndexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBinaryIndexPosition = function (dataPosition, binaryIndexName) {
+  var val = this.data[dataPosition][binaryIndexName];
+  var index = this.binaryIndices[binaryIndexName].values;
+
+  // i think calculateRange can probably be moved to collection
+  // as it doesn&#x27;t seem to need resultset.  need to verify
+  //var rs = new Resultset(this, null, null);
+  var range = this.calculateRange(&#x22;$eq&#x22;, binaryIndexName, val);
+
+  if (range[0] === 0 &#x26;&#x26; range[1] === -1) {
+    // uhoh didn&#x27;t find range
+    return null;
+  }
+
+  var min = range[0];
+  var max = range[1];
+
+  // narrow down the sub-segment of index values
+  // where the indexed property value exactly matches our
+  // value and then linear scan to find exact -index- position
+  for(var idx = min; idx &#x3c;= max; idx++) {
+    if (index[idx] === dataPosition) return idx;
+  }
+
+  // uhoh
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.getDynamicView" id="apidoc.element.lokijs.Collection.prototype.getDynamicView">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getDynamicView
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDynamicView = function (name) {
+  for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+    if (this.DynamicViews[idx].name === name) {
+      return this.DynamicViews[idx];
+    }
+  }
+
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.getSequencedIndexValues" id="apidoc.element.lokijs.Collection.prototype.getSequencedIndexValues">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getSequencedIndexValues
+        <span class="apidocSignatureSpan">(property)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSequencedIndexValues = function (property) {
+  var idx, idxvals = this.binaryIndices[property].values;
+  var result = &#x22;&#x22;;
+
+  for (idx = 0; idx &#x3c; idxvals.length; idx++) {
+    result += &#x22; [&#x22; + idx + &#x22;] &#x22; + this.data[idxvals[idx]][property];
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.getStage" id="apidoc.element.lokijs.Collection.prototype.getStage">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>getStage
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getStage = function (name) {
+  if (!this.stages[name]) {
+    this.stages[name] = {};
+  }
+  return this.stages[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.insert" id="apidoc.element.lokijs.Collection.prototype.insert">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>insert
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insert = function (doc) {
+  if (!Array.isArray(doc)) {
+    return this.insertOne(doc);
+  }
+
+  // holder to the clone of the object inserted if collections is set to clone objects
+  var obj;
+  var results = [];
+
+  this.emit(&#x27;pre-insert&#x27;, doc);
+  for (var i = 0, len = doc.length; i &#x3c; len; i++) {
+    obj = this.insertOne(doc[i], true);
+    if (!obj) {
+      return undefined;
+    }
+    results.push(obj);
+  }
+  this.emit(&#x27;insert&#x27;, results);
+  return results.length === 1 ? results[0] : results;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.insertOne" id="apidoc.element.lokijs.Collection.prototype.insertOne">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>insertOne
+        <span class="apidocSignatureSpan">(doc, bulkInsert)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertOne = function (doc, bulkInsert) {
+  var err = null;
+  var returnObj;
+
+  if (typeof doc !== &#x27;object&#x27;) {
+    err = new TypeError(&#x27;Document needs to be an object&#x27;);
+  } else if (doc === null) {
+    err = new TypeError(&#x27;Object cannot be null&#x27;);
+  }
+
+  if (err !== null) {
+    this.emit(&#x27;error&#x27;, err);
+    throw err;
+  }
+
+  // if configured to clone, do so now... otherwise just use same obj reference
+  var obj = this.cloneObjects ? clone(doc, this.cloneMethod) : doc;
+
+  if (typeof obj.meta === &#x27;undefined&#x27;) {
+    obj.meta = {
+      revision: 0,
+      created: 0
+    };
+  }
+
+  // allow pre-insert to modify actual collection reference even if cloning
+  if (!bulkInsert) {
+    this.emit(&#x27;pre-insert&#x27;, obj);
+  }
+  if (!this.add(obj)) {
+    return undefined;
+  }
+
+  // if cloning, give user back clone of &#x27;cloned&#x27; object with $loki and meta
+  returnObj = this.cloneObjects ? clone(obj, this.cloneMethod) : obj;
+
+  this.addAutoUpdateObserver(returnObj);
+  if (!bulkInsert) {
+    this.emit(&#x27;insert&#x27;, returnObj);
+  }
+  return returnObj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.mapReduce" id="apidoc.element.lokijs.Collection.prototype.mapReduce">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>mapReduce
+        <span class="apidocSignatureSpan">(mapFunction, reduceFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapReduce = function (mapFunction, reduceFunction) {
+  try {
+    return reduceFunction(this.data.map(mapFunction));
+  } catch (err) {
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.max" id="apidoc.element.lokijs.Collection.prototype.max">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>max
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">max = function (field) {
+  return Math.max.apply(null, this.extract(field));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.maxRecord" id="apidoc.element.lokijs.Collection.prototype.maxRecord">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>maxRecord
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxRecord = function (field) {
+  var i = 0,
+    len = this.data.length,
+    deep = isDeepProperty(field),
+    result = {
+      index: 0,
+      value: undefined
+    },
+    max;
+
+  for (i; i &#x3c; len; i += 1) {
+    if (max !== undefined) {
+      if (max &#x3c; deepProperty(this.data[i], field, deep)) {
+        max = deepProperty(this.data[i], field, deep);
+        result.index = this.data[i].$loki;
+      }
+    } else {
+      max = deepProperty(this.data[i], field, deep);
+      result.index = this.data[i].$loki;
+    }
+  }
+  result.value = max;
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.median" id="apidoc.element.lokijs.Collection.prototype.median">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>median
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">median = function (field) {
+  var values = this.extractNumerical(field);
+  values.sort(sub);
+
+  var half = Math.floor(values.length / 2);
+
+  if (values.length % 2) {
+    return values[half];
+  } else {
+    return (values[half - 1] + values[half]) / 2.0;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.min" id="apidoc.element.lokijs.Collection.prototype.min">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>min
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">min = function (field) {
+  return Math.min.apply(null, this.extract(field));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.minRecord" id="apidoc.element.lokijs.Collection.prototype.minRecord">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>minRecord
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minRecord = function (field) {
+  var i = 0,
+    len = this.data.length,
+    deep = isDeepProperty(field),
+    result = {
+      index: 0,
+      value: undefined
+    },
+    min;
+
+  for (i; i &#x3c; len; i += 1) {
+    if (min !== undefined) {
+      if (min &#x3e; deepProperty(this.data[i], field, deep)) {
+        min = deepProperty(this.data[i], field, deep);
+        result.index = this.data[i].$loki;
+      }
+    } else {
+      min = deepProperty(this.data[i], field, deep);
+      result.index = this.data[i].$loki;
+    }
+  }
+  result.value = min;
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.mode" id="apidoc.element.lokijs.Collection.prototype.mode">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>mode
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mode = function (field) {
+  var dict = {},
+    data = this.extract(field);
+  data.forEach(function (obj) {
+    if (dict[obj]) {
+      dict[obj] += 1;
+    } else {
+      dict[obj] = 1;
+    }
+  });
+  var max,
+    prop, mode;
+  for (prop in dict) {
+    if (max) {
+      if (max &#x3c; dict[prop]) {
+        mode = prop;
+      }
+    } else {
+      mode = prop;
+      max = dict[prop];
+    }
+  }
+  return mode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.no_op" id="apidoc.element.lokijs.Collection.prototype.no_op">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>no_op
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">no_op = function () {
+  return;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.prepareFullDocIndex" id="apidoc.element.lokijs.Collection.prototype.prepareFullDocIndex">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>prepareFullDocIndex
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareFullDocIndex = function () {
+  var len = this.data.length;
+  var indexes = new Array(len);
+  for (var i = 0; i &#x3c; len; i += 1) {
+    indexes[i] = i;
+  }
+  return indexes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.remove" id="apidoc.element.lokijs.Collection.prototype.remove">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>remove
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (doc) {
+  if (typeof doc === &#x27;number&#x27;) {
+    doc = this.get(doc);
+  }
+
+  if (&#x27;object&#x27; !== typeof doc) {
+    throw new Error(&#x27;Parameter is not an object&#x27;);
+  }
+  if (Array.isArray(doc)) {
+    var k = 0,
+      len = doc.length;
+    for (k; k &#x3c; len; k += 1) {
+      this.remove(doc[k]);
+    }
+    return;
+  }
+
+  if (!hasOwnProperty.call(doc, &#x27;$loki&#x27;)) {
+    throw new Error(&#x27;Object is not a document stored in the collection&#x27;);
+  }
+
+  try {
+    this.startTransaction();
+    var arr = this.get(doc.$loki, true),
+      // obj = arr[0],
+      position = arr[1];
+    var self = this;
+    Object.keys(this.constraints.unique).forEach(function (key) {
+      if (doc[key] !== null &#x26;&#x26; typeof doc[key] !== &#x27;undefined&#x27;) {
+        self.constraints.unique[key].remove(doc[key]);
+      }
+    });
+    // now that we can efficiently determine the data[] position of newly added document,
+    // submit it for all registered DynamicViews to remove
+    for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+      this.DynamicViews[idx].removeDocument(position);
+    }
+
+    if (this.adaptiveBinaryIndices) {
+      // for each binary index defined in collection, immediately update rather than flag for lazy rebuild
+      var key, bIndices = this.binaryIndices;
+      for (key in bIndices) {
+        this.adaptiveBinaryIndexRemove(position, key);
+      }
+    }
+    else {
+      this.flagBinaryIndexesDirty();
+    }
+
+    this.data.splice(position, 1);
+    this.removeAutoUpdateObserver(doc);
+
+    // remove id from idIndex
+    this.idIndex.splice(position, 1);
+
+    this.commit();
+    this.dirty = true; // for autosave scenarios
+    this.emit(&#x27;delete&#x27;, arr[0]);
+    delete doc.$loki;
+    delete doc.meta;
+    return doc;
+
+  } catch (err) {
+    this.rollback();
+    this.console.error(err.message);
+    this.emit(&#x27;error&#x27;, err);
+    return null;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.removeAutoUpdateObserver" id="apidoc.element.lokijs.Collection.prototype.removeAutoUpdateObserver">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeAutoUpdateObserver
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAutoUpdateObserver = function (object) {
+  if (!this.autoupdate || typeof Object.observe !== &#x27;function&#x27;)
+    return;
+
+  Object.unobserve(object, this.observerCallback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.removeDataOnly" id="apidoc.element.lokijs.Collection.prototype.removeDataOnly">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeDataOnly
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeDataOnly = function () {
+  this.remove(this.data.slice());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.removeDynamicView" id="apidoc.element.lokijs.Collection.prototype.removeDynamicView">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeDynamicView
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeDynamicView = function (name) {
+  for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+    if (this.DynamicViews[idx].name === name) {
+      this.DynamicViews.splice(idx, 1);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.removeTransform" id="apidoc.element.lokijs.Collection.prototype.removeTransform">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeTransform
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeTransform = function (name) {
+  delete this.transforms[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.removeWhere" id="apidoc.element.lokijs.Collection.prototype.removeWhere">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>removeWhere
+        <span class="apidocSignatureSpan">(query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeWhere = function (query) {
+  var list;
+  if (typeof query === &#x27;function&#x27;) {
+    list = this.data.filter(query);
+    this.remove(list);
+  } else {
+    this.chain().find(query).remove();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.rollback" id="apidoc.element.lokijs.Collection.prototype.rollback">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>rollback
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rollback = function () {
+  if (this.transactional) {
+    if (this.cachedData !== null &#x26;&#x26; this.cachedIndex !== null) {
+      this.data = this.cachedData;
+      this.idIndex = this.cachedIndex;
+      this.binaryIndices = this.cachedBinaryIndex;
+    }
+
+    // propagate rollback to dynamic views
+    for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+      this.DynamicViews[idx].rollback();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.setTTL" id="apidoc.element.lokijs.Collection.prototype.setTTL">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>setTTL
+        <span class="apidocSignatureSpan">(age, interval)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTTL = function (age, interval) {
+  if (age &#x3c; 0) {
+    clearInterval(this.ttl.daemon);
+  } else {
+    this.ttl.age = age;
+    this.ttl.ttlInterval = interval;
+    this.ttl.daemon = setInterval(this.ttlDaemonFuncGen(), interval);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.setTransform" id="apidoc.element.lokijs.Collection.prototype.setTransform">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>setTransform
+        <span class="apidocSignatureSpan">(name, transform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTransform = function (name, transform) {
+  this.transforms[name] = transform;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.stage" id="apidoc.element.lokijs.Collection.prototype.stage">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>stage
+        <span class="apidocSignatureSpan">(stageName, obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stage = function (stageName, obj) {
+  var copy = JSON.parse(JSON.stringify(obj));
+  this.getStage(stageName)[obj.$loki] = copy;
+  return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.startTransaction" id="apidoc.element.lokijs.Collection.prototype.startTransaction">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>startTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startTransaction = function () {
+  if (this.transactional) {
+    this.cachedData = clone(this.data, this.cloneMethod);
+    this.cachedIndex = this.idIndex;
+    this.cachedBinaryIndex = this.binaryIndices;
+
+    // propagate startTransaction to dynamic views
+    for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+      this.DynamicViews[idx].startTransaction();
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.stdDev" id="apidoc.element.lokijs.Collection.prototype.stdDev">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>stdDev
+        <span class="apidocSignatureSpan">(field)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stdDev = function (field) {
+  return standardDeviation(this.extractNumerical(field));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.ttlDaemonFuncGen" id="apidoc.element.lokijs.Collection.prototype.ttlDaemonFuncGen">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>ttlDaemonFuncGen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ttlDaemonFuncGen = function () {
+  var collection = this;
+  var age = this.ttl.age;
+  return function ttlDaemon() {
+    var now = Date.now();
+    var toRemove = collection.chain().where(function daemonFilter(member) {
+      var timestamp = member.meta.updated || member.meta.created;
+      var diff = now - timestamp;
+      return age &#x3c; diff;
+    });
+    toRemove.remove();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.update" id="apidoc.element.lokijs.Collection.prototype.update">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>update
+        <span class="apidocSignatureSpan">(doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (doc) {
+  if (Array.isArray(doc)) {
+    var k = 0,
+      len = doc.length;
+    for (k; k &#x3c; len; k += 1) {
+      this.update(doc[k]);
+    }
+    return;
+  }
+
+  // verify object is a properly formed document
+  if (!hasOwnProperty.call(doc, &#x27;$loki&#x27;)) {
+    throw new Error(&#x27;Trying to update unsynced document. Please save the document first by using insert() or addMany()&#x27;);
+  }
+  try {
+    this.startTransaction();
+    var arr = this.get(doc.$loki, true),
+      oldInternal,   // ref to existing obj
+      newInternal, // ref to new internal obj
+      position,
+      self = this;
+
+    if (!arr) {
+      throw new Error(&#x27;Trying to update a document not in collection.&#x27;);
+    }
+
+    oldInternal = arr[0]; // -internal- obj ref
+    position = arr[1]; // position in data array
+
+    // if configured to clone, do so now... otherwise just use same obj reference
+    newInternal = this.cloneObjects ? clone(doc, this.cloneMethod) : doc;
+
+    this.emit(&#x27;pre-update&#x27;, doc);
+
+    Object.keys(this.constraints.unique).forEach(function (key) {
+      self.constraints.unique[key].update(oldInternal, newInternal);
+    });
+
+    // operate the update
+    this.data[position] = newInternal;
+
+    if (newInternal !== doc) {
+      this.addAutoUpdateObserver(doc);
+    }
+
+    // now that we can efficiently determine the data[] position of newly added document,
+    // submit it for all registered DynamicViews to evaluate for inclusion/exclusion
+    for (var idx = 0; idx &#x3c; this.DynamicViews.length; idx++) {
+      this.DynamicViews[idx].evaluateDocument(position, false);
+    }
+
+    var key;
+    if (this.adaptiveBinaryIndices) {
+      // for each binary index defined in collection, immediately update rather than flag for lazy rebuild
+      var bIndices = this.binaryIndices;
+      for (key in bIndices) {
+        this.adaptiveBinaryIndexUpdate(position, key);
+      }
+    }
+    else {
+      this.flagBinaryIndexesDirty();
+    }
+
+    this.idIndex[position] = newInternal.$loki;
+    //this.flagBinaryIndexesDirty();
+
+    this.commit();
+    this.dirty = true; // for autosave scenarios
+
+    this.emit(&#x27;update&#x27;, doc, this.cloneObjects ? clone(oldInternal, this.cloneMethod) : null);
+    return doc;
+  } catch (err) {
+    this.rollback();
+    this.console.error(err.message);
+    this.emit(&#x27;error&#x27;, err);
+    throw (err); // re-throw error so user does not think it succeeded
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.updateWhere" id="apidoc.element.lokijs.Collection.prototype.updateWhere">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>updateWhere
+        <span class="apidocSignatureSpan">(filterFunction, updateFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateWhere = function (filterFunction, updateFunction) {
+  var results = this.where(filterFunction),
+    i = 0,
+    obj;
+  try {
+    for (i; i &#x3c; results.length; i++) {
+      obj = updateFunction(results[i]);
+      this.update(obj);
+    }
+
+  } catch (err) {
+    this.rollback();
+    this.console.error(err.message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.where" id="apidoc.element.lokijs.Collection.prototype.where">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.</span>where
+        <span class="apidocSignatureSpan">(fun)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">where = function (fun) {
+  var results = new Resultset(this, {
+    queryFunc: fun
+  });
+  if (!this.cloneObjects) {
+    return results;
+  } else {
+    return cloneObjectArray(results, this.cloneMethod);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.Collection.prototype.console" id="apidoc.module.lokijs.Collection.prototype.console">module lokijs.Collection.prototype.console</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.console.error" id="apidoc.element.lokijs.Collection.prototype.console.error">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.console.log" id="apidoc.element.lokijs.Collection.prototype.console.log">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.Collection.prototype.console.warn" id="apidoc.element.lokijs.Collection.prototype.console.warn">
+        function <span class="apidocSignatureSpan">lokijs.Collection.prototype.console.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.KeyValueStore" id="apidoc.module.lokijs.KeyValueStore">module lokijs.KeyValueStore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.KeyValueStore" id="apidoc.element.lokijs.KeyValueStore.KeyValueStore">
+        function <span class="apidocSignatureSpan">lokijs.</span>KeyValueStore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function KeyValueStore() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.KeyValueStore.prototype" id="apidoc.module.lokijs.KeyValueStore.prototype">module lokijs.KeyValueStore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.prototype.bs" id="apidoc.element.lokijs.KeyValueStore.prototype.bs">
+        function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>bs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bs = function () {
+  return new BSonSort(this.sort);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.prototype.get" id="apidoc.element.lokijs.KeyValueStore.prototype.get">
+        function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>get
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key) {
+  return this.values[binarySearch(this.keys, key, this.sort).index];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.prototype.set" id="apidoc.element.lokijs.KeyValueStore.prototype.set">
+        function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+  var pos = this.bs(this.keys, key);
+  if (pos.found) {
+    this.values[pos.index] = value;
+  } else {
+    this.keys.splice(pos.index, 0, key);
+    this.values.splice(pos.index, 0, value);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.prototype.setSort" id="apidoc.element.lokijs.KeyValueStore.prototype.setSort">
+        function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>setSort
+        <span class="apidocSignatureSpan">(fun)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSort = function (fun) {
+  this.bs = new BSonSort(fun);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.KeyValueStore.prototype.sort" id="apidoc.element.lokijs.KeyValueStore.prototype.sort">
+        function <span class="apidocSignatureSpan">lokijs.KeyValueStore.prototype.</span>sort
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sort = function (a, b) {
+  return (a &#x3c; b) ? -1 : ((a &#x3e; b) ? 1 : 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiFsAdapter" id="apidoc.module.lokijs.LokiFsAdapter">module lokijs.LokiFsAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiFsAdapter.LokiFsAdapter" id="apidoc.element.lokijs.LokiFsAdapter.LokiFsAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiFsAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiFsAdapter() {
+  this.fs = require(&#x27;fs&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiFsAdapter.prototype" id="apidoc.module.lokijs.LokiFsAdapter.prototype">module lokijs.LokiFsAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiFsAdapter.prototype.deleteDatabase" id="apidoc.element.lokijs.LokiFsAdapter.prototype.deleteDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>deleteDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deleteDatabase(dbname, callback) {
+  this.fs.unlink(dbname, function deleteDatabaseCallback(err) {
+    if (err) {
+      callback(new Error(err));
+    } else {
+      callback();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiFsAdapter.prototype.loadDatabase" id="apidoc.element.lokijs.LokiFsAdapter.prototype.loadDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>loadDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadDatabase(dbname, callback) {
+  var self = this;
+
+  this.fs.stat(dbname, function (err, stats) {
+    if (!err &#x26;&#x26; stats.isFile()) {
+      self.fs.readFile(dbname, {
+        encoding: &#x27;utf8&#x27;
+      }, function readFileCallback(err, data) {
+        if (err) {
+          callback(new Error(err));
+        } else {
+          callback(data);
+        }
+      });
+    }
+    else {
+      callback(null);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiFsAdapter.prototype.saveDatabase" id="apidoc.element.lokijs.LokiFsAdapter.prototype.saveDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiFsAdapter.prototype.</span>saveDatabase
+        <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveDatabase(dbname, dbstring, callback) {
+  var self = this;
+  var tmpdbname = dbname + &#x27;~&#x27;;
+  this.fs.writeFile(tmpdbname, dbstring, function writeFileCallback(err) {
+    if (err) {
+      callback(new Error(err));
+    } else {
+      self.fs.rename(tmpdbname,dbname,callback);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiLocalStorageAdapter" id="apidoc.module.lokijs.LokiLocalStorageAdapter">module lokijs.LokiLocalStorageAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiLocalStorageAdapter.LokiLocalStorageAdapter" id="apidoc.element.lokijs.LokiLocalStorageAdapter.LokiLocalStorageAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiLocalStorageAdapter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiLocalStorageAdapter() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiLocalStorageAdapter.prototype" id="apidoc.module.lokijs.LokiLocalStorageAdapter.prototype">module lokijs.LokiLocalStorageAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.deleteDatabase" id="apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.deleteDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>deleteDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deleteDatabase(dbname, callback) {
+  if (localStorageAvailable()) {
+    localStorage.removeItem(dbname);
+    callback(null);
+  } else {
+    callback(new Error(&#x27;localStorage is not available&#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.loadDatabase" id="apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.loadDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>loadDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadDatabase(dbname, callback) {
+  if (localStorageAvailable()) {
+    callback(localStorage.getItem(dbname));
+  } else {
+    callback(new Error(&#x27;localStorage is not available&#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.saveDatabase" id="apidoc.element.lokijs.LokiLocalStorageAdapter.prototype.saveDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiLocalStorageAdapter.prototype.</span>saveDatabase
+        <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveDatabase(dbname, dbstring, callback) {
+  if (localStorageAvailable()) {
+    localStorage.setItem(dbname, dbstring);
+    callback(null);
+  } else {
+    callback(new Error(&#x27;localStorage is not available&#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiMemoryAdapter" id="apidoc.module.lokijs.LokiMemoryAdapter">module lokijs.LokiMemoryAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiMemoryAdapter.LokiMemoryAdapter" id="apidoc.element.lokijs.LokiMemoryAdapter.LokiMemoryAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiMemoryAdapter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiMemoryAdapter(options) {
+  this.hashStore = {};
+  this.options = options || {};
+
+  if (!this.options.hasOwnProperty(&#x27;asyncResponses&#x27;)) {
+    this.options.asyncResponses = false;
+  }
+
+  if (!this.options.hasOwnProperty(&#x27;asyncTimeout&#x27;)) {
+    this.options.asyncTimeout = 50; // 50 ms default
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiMemoryAdapter.prototype" id="apidoc.module.lokijs.LokiMemoryAdapter.prototype">module lokijs.LokiMemoryAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.deleteDatabase" id="apidoc.element.lokijs.LokiMemoryAdapter.prototype.deleteDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>deleteDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteDatabase = function (dbname, callback) {
+  if (this.hashStore.hasOwnProperty(dbname)) {
+    delete this.hashStore[dbname];
+  }
+
+  if (typeof callback === &#x22;function&#x22;) {
+    callback();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.loadDatabase" id="apidoc.element.lokijs.LokiMemoryAdapter.prototype.loadDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>loadDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDatabase = function (dbname, callback) {
+  var self=this;
+
+  if (this.options.asyncResponses) {
+    setTimeout(function() {
+      if (self.hashStore.hasOwnProperty(dbname)) {
+        callback(self.hashStore[dbname].value);
+      }
+      else {
+        callback (new Error(&#x22;unable to load database, &#x22; + dbname + &#x22; was not found in memory adapter&#x22;));
+      }
+    }, this.options.asyncTimeout);
+  }
+  else {
+    if (this.hashStore.hasOwnProperty(dbname)) {
+      callback(this.hashStore[dbname].value);
+    }
+    else {
+      callback (new Error(&#x22;unable to load database, &#x22; + dbname + &#x22; was not found in memory adapter&#x22;));
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiMemoryAdapter.prototype.saveDatabase" id="apidoc.element.lokijs.LokiMemoryAdapter.prototype.saveDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiMemoryAdapter.prototype.</span>saveDatabase
+        <span class="apidocSignatureSpan">(dbname, dbstring, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveDatabase = function (dbname, dbstring, callback) {
+  var self=this;
+  var saveCount;
+
+  if (this.options.asyncResponses) {
+    setTimeout(function() {
+      saveCount = (self.hashStore.hasOwnProperty(dbname)?self.hashStore[dbname].savecount:0);
+
+      self.hashStore[dbname] = {
+        savecount: saveCount+1,
+        lastsave: new Date(),
+        value: dbstring
+      };
+
+      callback();
+    }, this.options.asyncTimeout);
+  }
+  else {
+    saveCount = (this.hashStore.hasOwnProperty(dbname)?this.hashStore[dbname].savecount:0);
+
+    this.hashStore[dbname] = {
+      savecount: saveCount+1,
+      lastsave: new Date(),
+      value: dbstring
+    };
+
+    callback();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiOps" id="apidoc.module.lokijs.LokiOps">module lokijs.LokiOps</a></h1>
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiPartitioningAdapter" id="apidoc.module.lokijs.LokiPartitioningAdapter">module lokijs.LokiPartitioningAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.LokiPartitioningAdapter" id="apidoc.element.lokijs.LokiPartitioningAdapter.LokiPartitioningAdapter">
+        function <span class="apidocSignatureSpan">lokijs.</span>LokiPartitioningAdapter
+        <span class="apidocSignatureSpan">(adapter, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiPartitioningAdapter(adapter, options) {
+  this.mode = &#x22;reference&#x22;;
+  this.adapter = null;
+  this.options = options || {};
+  this.dbref = null;
+  this.dbname = &#x22;&#x22;;
+  this.pageIterator = {};
+
+  // verify user passed an appropriate adapter
+  if (adapter) {
+    if (adapter.mode === &#x22;reference&#x22;) {
+      throw new Error(&#x22;LokiPartitioningAdapter cannot be instantiated with a reference mode adapter&#x22;);
+    }
+    else {
+      this.adapter = adapter;
+    }
+  }
+  else {
+    throw new Error(&#x22;LokiPartitioningAdapter requires a (non-reference mode) adapter on construction&#x22;);
+  }
+
+  // set collection paging defaults
+  if (!this.options.hasOwnProperty(&#x22;paging&#x22;)) {
+    this.options.paging = false;
+  }
+
+  // default to page size of 25 megs (can be up to your largest serialized object size larger than this)
+  if (!this.options.hasOwnProperty(&#x22;pageSize&#x22;)) {
+    this.options.pageSize = 25*1024*1024;
+  }
+
+  if (!this.options.hasOwnProperty(&#x22;delimiter&#x22;)) {
+    this.options.delimiter = &#x27;$&#x3c;\n&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.LokiPartitioningAdapter.prototype" id="apidoc.module.lokijs.LokiPartitioningAdapter.prototype">module lokijs.LokiPartitioningAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.exportDatabase" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.exportDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>exportDatabase
+        <span class="apidocSignatureSpan">(dbname, dbref, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exportDatabase = function (dbname, dbref, callback) {
+  var self=this;
+  var idx, clen = dbref.collections.length;
+
+  this.dbref = dbref;
+  this.dbname = dbname;
+
+  // queue up dirty partitions to be saved
+  this.dirtyPartitions = [-1];
+  for(idx=0; idx&#x3c;clen; idx++) {
+    if (dbref.collections[idx].dirty) {
+      this.dirtyPartitions.push(idx);
+    }
+  }
+
+  this.saveNextPartition(function(err) {
+    callback(err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadDatabase" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadDatabase">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadDatabase
+        <span class="apidocSignatureSpan">(dbname, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadDatabase = function (dbname, callback) {
+  var self=this;
+  this.dbname = dbname;
+  this.dbref = new Loki(dbname);
+
+  // load the db container (without data)
+  this.adapter.loadDatabase(dbname, function(result) {
+    if (typeof result !== &#x22;string&#x22;) {
+      callback(new Error(&#x22;LokiPartitioningAdapter received an unexpected response from inner adapter loadDatabase()&#x22;));
+    }
+
+    // I will want to use loki destructuring helper methods so i will inflate into typed instance
+    var db = JSON.parse(result);
+    self.dbref.loadJSONObject(db);
+    db = null;
+
+    var clen = self.dbref.collections.length;
+
+    if (self.dbref.collections.length === 0) {
+      callback(self.dbref);
+      return;
+    }
+
+    self.pageIterator = {
+      collection: 0,
+      pageIndex: 0
+    };
+
+    self.loadNextPartition(0, function() {
+      callback(self.dbref);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPage" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPage">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadNextPage
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadNextPage = function (callback) {
+  // calculate name for next saved page in sequence
+  var keyname = this.dbname + &#x22;.&#x22; + this.pageIterator.collection + &#x22;.&#x22; + this.pageIterator.pageIndex;
+  var self=this;
+
+  // load whatever page is next in sequence
+  this.adapter.loadDatabase(keyname, function(result) {
+    var data = result.split(self.options.delimiter);
+    result = &#x22;&#x22;; // free up memory now that we have split it into array
+    var dlen = data.length;
+    var idx;
+
+    // detect if last page by presence of final empty string element and remove it if so
+    var isLastPage = (data[dlen-1] === &#x22;&#x22;);
+    if (isLastPage) {
+      data.pop();
+      dlen = data.length;
+      // empty collections are just a delimiter meaning two blank items
+      if (data[dlen-1] === &#x22;&#x22; &#x26;&#x26; dlen === 1) {
+        data.pop();
+        dlen = data.length;
+      }
+    }
+
+    // convert stringified array elements to object instances and push to collection data
+    for(idx=0; idx &#x3c; dlen; idx++) {
+      self.dbref.collections[self.pageIterator.collection].data.push(JSON.parse(data[idx]));
+      data[idx] = null;
+    }
+    data = [];
+
+    // if last page, we are done with this partition
+    if (isLastPage) {
+
+      // if there are more partitions, kick off next partition load
+      if (++self.pageIterator.collection &#x3c; self.dbref.collections.length) {
+        self.loadNextPartition(self.pageIterator.collection, callback);
+      }
+      else {
+        callback();
+      }
+    }
+    else {
+      self.pageIterator.pageIndex++;
+      self.loadNextPage(callback);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPartition" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.loadNextPartition">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>loadNextPartition
+        <span class="apidocSignatureSpan">(partition, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loadNextPartition = function (partition, callback) {
+  var keyname = this.dbname + &#x22;.&#x22; + partition;
+  var self=this;
+
+  if (this.options.paging === true) {
+    this.pageIterator.pageIndex = 0;
+    this.loadNextPage(callback);
+    return;
+  }
+
+  this.adapter.loadDatabase(keyname, function(result) {
+    var data = self.dbref.deserializeCollection(result, { delimited: true, collectionIndex: partition });
+    self.dbref.collections[partition].data = data;
+
+    if (++partition &#x3c; self.dbref.collections.length) {
+      self.loadNextPartition(partition, callback);
+    }
+    else {
+      callback();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPage" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPage">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>saveNextPage
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveNextPage = function (callback) {
+  var self=this;
+  var coll = this.dbref.collections[this.pageIterator.collection];
+  var keyname = this.dbname + &#x22;.&#x22; + this.pageIterator.collection + &#x22;.&#x22; + this.pageIterator.pageIndex;
+  var pageLen=0,
+    cdlen = coll.data.length,
+    delimlen = this.options.delimiter.length;
+  var serializedObject = &#x22;&#x22;,
+    pageBuilder = &#x22;&#x22;;
+  var doneWithPartition=false,
+    doneWithPage=false;
+
+  var pageSaveCallback = function(err) {
+    pageBuilder = &#x22;&#x22;;
+
+    if (err) {
+      callback(err);
+    }
+
+    // update meta properties then continue process by invoking callback
+    if (doneWithPartition) {
+      callback(null);
+    }
+    else {
+      self.pageIterator.pageIndex++;
+      self.saveNextPage(callback);
+    }
+  };
+
+  if (coll.data.length === 0) {
+    doneWithPartition = true;
+  }
+
+  while (true) {
+    if (!doneWithPartition) {
+      // serialize object
+      serializedObject = JSON.stringify(coll.data[this.pageIterator.docIndex]);
+      pageBuilder += serializedObject;
+      pageLen += serializedObject.length;
+
+      // if no more documents in collection to add, we are done with partition
+      if (++this.pageIterator.docIndex &#x3e;= cdlen) doneWithPartition = true;
+    }
+    // if our current page is bigger than defined pageSize, we are done with page
+    if (pageLen &#x3e;= this.options.pageSize) doneWithPage = true;
+
+    // if not done with current page, need delimiter before next item
+    // if done with partition we also want a delmiter to indicate &#x27;end of pages&#x27; final empty row
+    if (!doneWithPage || doneWithPartition) {
+      pageBuilder += this.options.delimiter;
+      pageLen += delimlen;
+    }
+
+    // if we are done with page save it and pass off to next recursive call or callback
+    if (doneWithPartition || doneWithPage) {
+      this.adapter.saveDatabase(keyname, pageBuilder, pageSaveCallback);
+      return;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPartition" id="apidoc.element.lokijs.LokiPartitioningAdapter.prototype.saveNextPartition">
+        function <span class="apidocSignatureSpan">lokijs.LokiPartitioningAdapter.prototype.</span>saveNextPartition
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveNextPartition = function (callback) {
+  var self=this;
+  var partition = this.dirtyPartitions.shift();
+  var keyname = this.dbname + ((partition===-1)?&#x22;&#x22;:(&#x22;.&#x22; + partition));
+
+  // if we are doing paging and this is collection partition
+  if (this.options.paging &#x26;&#x26; partition !== -1) {
+    this.pageIterator = {
+      collection: partition,
+      docIndex: 0,
+      pageIndex: 0
+    };
+
+    // since saveNextPage recursively calls itself until done, our callback means this whole paged partition is finished
+    this.saveNextPage(function(err) {
+      if (self.dirtyPartitions.length === 0) {
+        callback(err);
+      }
+      else {
+        self.saveNextPartition(callback);
+      }
+    });
+    return;
+  }
+
+  // otherwise this is &#x27;non-paged&#x27; partioning...
+  var result = this.dbref.serializeDestructured({
+    partitioned : true,
+    delimited: true,
+    partition: partition
+  });
+
+  this.adapter.saveDatabase(keyname, result, function(err) {
+    if (err) {
+      callback(err);
+      return;
+    }
+
+    if (self.dirtyPartitions.length === 0) {
+      callback(null);
+    }
+    else {
+      self.saveNextPartition(callback);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.lokijs.persistenceAdapters" id="apidoc.module.lokijs.persistenceAdapters">module lokijs.persistenceAdapters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.persistenceAdapters.fs" id="apidoc.element.lokijs.persistenceAdapters.fs">
+        function <span class="apidocSignatureSpan">lokijs.persistenceAdapters.</span>fs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiFsAdapter() {
+  this.fs = require(&#x27;fs&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.lokijs.persistenceAdapters.localStorage" id="apidoc.element.lokijs.persistenceAdapters.localStorage">
+        function <span class="apidocSignatureSpan">lokijs.persistenceAdapters.</span>localStorage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LokiLocalStorageAdapter() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
